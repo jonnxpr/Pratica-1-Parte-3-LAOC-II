@@ -1,0 +1,14 @@
+module mux2_1 (a, b, sel, DataOut);
+
+	input [11:0] A, B;
+	input Control;
+	output reg [11:0] DataOut;
+
+	always @(A, B, Control)
+	begin
+	  case (Control)
+		  1'b0: DataOut <= A;
+		  1'b1: DataOut <= B;
+	  endcase
+	end
+endmodule
